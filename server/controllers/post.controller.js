@@ -19,6 +19,51 @@ export function getPosts(req, res) {
 }
 
 /**
+ * Edit post
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function editPost(req, res) {
+  Post.update({ cuid: req.params.cuid }, req.body.post).exec((err, post) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ post });
+  });
+}
+
+/**
+ * Vote up post
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function voteUpPost(req, res) {
+  Post.update({ cuid: req.params.cuid }, { $inc: { voteCount: 1 } }).exec((err, post) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ post });
+  });
+}
+
+/**
+ * Vote down post
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function voteDownPost(req, res) {
+  Post.update({ cuid: req.params.cuid }, { $inc: { voteCount: -1 } }).exec((err, post) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ post });
+  });
+}
+
+/**
  * Save a post
  * @param req
  * @param res
