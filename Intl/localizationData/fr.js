@@ -1,10 +1,13 @@
 export default {
   locale: 'fr',
   messages: {
-	editPost: 'Edit Post',
-	voteUpPost: 'Vote Up',
-	voteDownPost: 'Vote Down',
-	postVoteCount: 'Vote count: ',
+    home: 'Home',
+    about: 'About',
+    posts: 'Posts',
+    editPost: 'Edit Post',
+    voteUpPost: 'Vote Up',
+    voteDownPost: 'Vote Down',
+    postVoteCount: 'Vote count: ',
     siteTitle: 'MERN blog de démarrage',
     addPost: 'Ajouter Poster',
     switchLanguage: 'Changer de langue',
